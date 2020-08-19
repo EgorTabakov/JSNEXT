@@ -1,0 +1,266 @@
+.headerFix {
+  position: fixed;
+  z-index: 9999;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.header {
+  min-height: 100px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header a:hover {
+  color: #222222;
+}
+
+.log {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.logo {
+  width: 165px;
+  line-height: 51px;
+  text-transform: uppercase;
+  background: url("../../assets/img/logo.png") no-repeat;
+  text-decoration: none;
+  font-size: 27px;
+  padding-left: 72px;
+  color: #222222;
+  margin-right: 30px;
+}
+
+.logo span {
+  font-weight: 700;
+  color: #f16d7f;
+}
+
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  height: 38px;
+  overflow: hidden;
+  font-size: 14px;
+  width: 332px;
+}
+
+.searchBrowse {
+  padding: 14px;
+  background-color: #f8f8f8;
+  font-weight: 400;
+  line-height: 38px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.search input {
+  height: inherit;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  border-left: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+}
+
+.search button {
+  height: inherit;
+  border: none;
+  background: none;
+  padding: 12px;
+}
+
+.search .searchBrowse i {
+  color: #838383;
+}
+
+.search button i {
+  color: #a4a4a4;
+}
+
+.headerCart {
+  margin-right: 8px;
+}
+
+.accountCart {
+  margin-left: auto;
+}
+
+.accountCart .mainMiniCart {
+  overflow-y: scroll;
+  height: 500px;
+  position: absolute;
+  width: 260px;
+  right: 58px;
+  top: 100px;
+  background-color: #ffffff;
+  padding: 1rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+.accountCart .mainMiniCart .wrapMiniCart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.accountCart .mainMiniCart .wrapMiniCart button {
+  background: none;
+  outline: none;
+  border: none;
+  color: #c0c0c0;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.accountCart .mainMiniCart .nameMiniCart {
+  font-size: 12px;
+  margin-top: 10px;
+  line-height: 20px;
+}
+
+.accountCart .mainMiniCart img {
+  height: 80px;
+  float: left;
+  margin: 8px;
+}
+
+.accountCart .mainMiniCart span {
+  color: #e4af48;
+  font-size: 12px;
+}
+
+.accountCart .mainMiniCart .priceMiniCart {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #f16d7f;
+  font-size: 12px;
+}
+
+.accountCart .mainMiniCart .miniCartTotalPrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #222222;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.accountCart .mainMiniCart .miniCartTotalPrice .total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #222222;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.accountCart .mainMiniCart .miniCartTotalPrice button {
+  border: none;
+  background-color: #f16d7f;
+  padding: 13px 19px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #ffffff;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.accountBtn {
+  border: none;
+  background-color: #f16d7f;
+  padding: 13px 19px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.accountBtn:hover {
+  background-color: #e21632;
+}
+
+.headerLine {
+  border-bottom: 1px solid #ececec;
+}
+
+.topNavWrap {
+  -webkit-box-shadow: 0px 10px 15px #e8e8e8;
+          box-shadow: 0px 10px 15px #e8e8e8;
+}
+
+.topNav {
+  height: 51px;
+  font-weight: 700;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.topNav a {
+  text-decoration: none;
+  color: #222222;
+  text-transform: uppercase;
+}
+
+.topNav a:not(:last-child) {
+  margin-right: 45px;
+}
+
+.topNav a:hover {
+  color: #f16d7f;
+}
+/*# sourceMappingURL=header.css.map */

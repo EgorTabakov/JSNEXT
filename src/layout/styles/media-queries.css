@@ -1,0 +1,293 @@
+@media (min-width: 992px) and (max-width: 1140px) {
+    .topMan {
+        background-position: left 500px top 10px;
+    }
+    .navbar-brand {
+        display: none !important;
+    }
+    .category {
+        flex-direction: row;
+        margin-top: 10px;
+        height: auto;
+    }
+    .product {
+        width: 100%;
+        height: 45vh;
+    }
+    .featureBanner {
+        width: 100%;
+    }
+    .featureBox {
+        width: 100%;
+        height: auto;
+    }
+    .featureBoxText {
+        margin-left: 20px;
+    }
+    .youMayProducts {
+        margin-bottom: 70px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .topMan {
+        background-position: left 300px top 10px;
+    }
+    .navbar-brand {
+        display: none !important;
+    }
+    .category {
+        flex-direction: row;
+        margin-top: 10px;
+        height: auto;
+    }
+    .product {
+        width: 100%;
+        height: 45vh;
+    }
+    .featureBanner {
+        width: 100%;
+    }
+    .featureBox {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+    }
+    .featureBoxText {
+        margin-left: 20px;
+        width: 35%;
+    }
+    .subscribeLeft {
+        width: 100%;
+        border-right: none;
+        height: auto;
+    }
+    .subscribeRight {
+        width: 100%;
+    }
+    .subscribePerson {
+        width: unset;
+        margin-top: 8px;
+    }
+    .subscribeForm {
+        width: unset;
+        height: unset;
+        margin-top: 20px;
+    }
+    .subscribeForm input {
+        margin-top: 0px;
+    }
+    .mainWrap .row {
+        width: 100%;
+    }
+    .mainWrap .rowTrending {
+        width: inherit;
+        margin-bottom: 20px;
+    }
+    .mainWrap .rowSize {
+        width: inherit;
+        margin-bottom: 20px;
+    }
+    .mainWrap .rowPrice {
+        width: inherit;
+    }
+
+    .mainWrap button {
+        width: 310px;
+        margin-top: 30px;
+    }
+
+    .youMayProducts {
+        margin: 30px;
+    }
+}
+@media (max-width: 768px) {
+    .topNav li a:not(:last-child) {
+        margin-right: 15px;
+    }
+    .navbar-brand {
+        display: none !important;
+    }
+    .header {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 5px;
+    }
+    .accountCart {
+        margin-left: 0px;
+    }
+    .topMan {
+        background: none;
+    }
+    .topBanner {
+        height: 300px;
+    }
+    .bannerText {
+        top: 30px;
+    }
+    .badge {
+        margin-top: 0;
+        width: unset;
+        height: unset;
+        background-color: #ffffff;
+        padding: 0;
+    }
+    .category {
+        flex-direction: row;
+        margin-top: 10px;
+        height: auto;
+    }
+    .product {
+        text-align: center;
+        height: 10vh;
+        background: none;
+        width: 50%;
+    }
+    .featureBanner {
+        width: 100%;
+    }
+    .featureBox {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+    }
+    .featureBoxText {
+        margin-left: 20px;
+        width: 435px;
+    }
+    .featureBoxText :nth-child(2) {
+        width: auto;
+    }
+    .subscribeLeft {
+        width: 100%;
+        border-right: none;
+        height: auto;
+    }
+    .subscribeRight {
+        width: 100%;
+    }
+    .subscribePerson {
+        width: unset;
+        margin-top: 8px;
+    }
+    .subscribeForm {
+        width: unset;
+        height: unset;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+    .subscribeForm input {
+        margin-top: 0px;
+    }
+    .shipping {
+        display: none;
+    }
+    .mainWrap {
+        margin-left: 40px;
+    }
+    .mainWrap .row {
+        width: 100%;
+    }
+    .mainWrap .rowTrending {
+        width: inherit;
+        margin-bottom: 20px;
+    }
+    .mainWrap .rowSize {
+        width: inherit;
+        margin-bottom: 20px;
+    }
+    .mainWrap .rowPrice {
+        width: inherit;
+    }
+    .mainWrap button {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .mainWrap .catalogItems {
+        justify-content: center;
+    }
+    .mainWrap .catalogItems .itemsProduct {
+        margin: 10px 10px 10px 10px;
+    }
+    .youMayProducts {
+        margin: 30px;
+    }
+    .youMay {
+        justify-content: center;
+    }
+    aside {
+        float: none;
+    }
+}
+/* @media (min-width: 300px) and (max-width: 576px) {
+    .topNav li a:not(:last-child) {
+        margin-right: 15px;
+    }
+    .navbar-brand {
+        display: none !important;
+    }
+    .header {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 200px;
+        padding-bottom: 5px;
+    }
+    .log {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .accountCart {
+        width: 100%;
+        text-align: center;
+    }
+    .topMan {
+        background: none;
+    }
+    .topBanner {
+        height: 380px;
+    }
+    .bannerText {
+        top: 120px;
+        width: 100%;
+    }
+    .bannerText h2 {
+        font-size: 50px;
+    }
+    .bannerText span:nth-child(2) {
+        font-size: 30px;
+    }
+    .bannerText span:nth-child(3) {
+        font-size: 30px;
+    }
+    .category {
+        flex-direction: row;
+        margin-top: 10px;
+    }
+    .product {
+        width: 100%;
+    }
+    .featureBanner {
+        width: 100%;
+    }
+    .featureBox {
+        width: 100%;
+        height: auto;
+        justify-content: center;
+    }
+    .featureBoxText {
+        margin-left: 20px;
+        width: 410px;
+    }
+    .featureBoxText :nth-child(2) {
+        width: auto;
+    }
+    .subscribeLeft {
+        width: 100%;
+        border-right: none;
+        height: auto;
+    }
+    .subscribeRight {
+        width: 100%;
+    }
+} */
