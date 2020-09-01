@@ -17,7 +17,7 @@ class Cart {
     this.items = bascket;
   }
     
-    _init() {
+    init() {
 
 
         this.container = document.querySelector('.jsCart');
@@ -55,7 +55,7 @@ class Cart {
 }
 
 const cart = new Cart();
-cart._init();
+cart.init();
 
 
 //удаление товара из корзины
@@ -70,6 +70,6 @@ addEventListener('click', e => {
 //обновить данные при изменении количества
 addEventListener('input', function (e) {
 
-    catalog._render();
+    cart._render();
 
 });

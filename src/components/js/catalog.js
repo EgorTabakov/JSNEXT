@@ -1,6 +1,48 @@
+const API = 'https://raw.githubusercontent.com/EgorTabakov/static/master/JSON/catalog.json';
+
 const cart = document.querySelector('.headerCart');
 const container = document.querySelector('.itemJS');
+const reg = /\S+/;
+
 let items = [];
+const promise = new Promise((resolve, reject) => {
+
+    let xhr;
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest()
+    } else if (window.ActiveXObject) {
+        xhr = new ActiveXObject("Microsoft.XMLHTTP")
+    }
+    xhr.open('GET', API, true);
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            resolve(xhr.responseText);
+        } else {
+            reject(Error('Произошла ошибка. Код ошибки:' + xhr.statusText));
+        }
+    }
+    xhr.send();
+});
+
+promise
+    .then((result) => {
+        // console.log(result);
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+
+
+function search() {
+
+    let b = document.getElementsById("searchText").value;
+    console.log(b);
+    }
+
+    
+document.getElementById("search").onclick = search;
+
+
 class Data {
 
     constructor() {
@@ -14,8 +56,7 @@ class Data {
     _massive() {
         this.fileNameSt = this._file();
         if (this.fileNameSt == 'index.html') {
-
-            this.names = ['MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT'];
+            this.names = ['MANGO PEOPLE T-SHIRT', 'KIWI PEOPLE T-SHIRT', 'PINEAPPLE PEOPLE T-SHIRT', 'APPLE PEOPLE T-SHIRT', 'HELLO T-SHIRT', 'WORLD T-SHIRT', 'ELEMENT T-SHIRT', 'JS T-SHIRT'];
             this.prices = [52, 54, 53, 55, 58, 60, 80, 90];
             this.imgs = [
                 '../src/assets/img/Layer_2.jpg',
@@ -29,7 +70,8 @@ class Data {
             ];
 
         } else if (this.fileNameSt == 'catalog.html') {
-            this.names = ['TT MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT', 'MANGO PEOPLE T-SHIRT'];
+
+            this.names = ['TT MANGO PEOPLE T-SHIRT', 'KIWI PEOPLE T-SHIRT', 'PINEAPPLE PEOPLE T-SHIRT', 'APPLE PEOPLE T-SHIRT', 'HELLO PEOPLE T-SHIRT', 'WORLD PEOPLE T-SHIRT', 'ELEMENT PEOPLE T-SHIRT', 'JS PEOPLE T-SHIRT', 'HTML PEOPLE T-SHIRT'];
             this.prices = [15, 2, 59, 53, 55, 70, 60, 80, 90];
             this.imgs = [
                 '../src/assets/img/cart_pr_1.jpg',
@@ -42,6 +84,7 @@ class Data {
                 '../src/assets/img/cart_pr_8.jpg',
                 '../src/assets/img/cart_pr_9.jpg'
             ];
+            this.sizes = [M, L, S, XL, XXL, XS, S, M, L];
 
         } else {
             this.names = ['BLAZE LEGGINGS', 'ALEXA SWEATER', 'AGNES TOP', 'SYLVA SWEATER'];
@@ -59,7 +102,8 @@ class Data {
     _file() {
 
         let st = window.location.href;
-        let fileName = st.substring(st.lastIndexOf('/') + 1, st.length);
+        let longame = st.substring(st.lastIndexOf('/') + 1, st.length);
+        let fileName = longame.substring(0, longame.lastIndexOf('?'));
         return fileName;
 
     }

@@ -1,22 +1,30 @@
-const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/catalogData.json';
+const API = 'https://raw.githubusercontent.com/EgorTabakov/static/master/JSON/catalog.json';
 
-function makeGETRequest(url, callback) {
+const promise = new Promise((resolve, reject) => {
+    
     let xhr;
-//debugger;
     if (window.XMLHttpRequest) {
         xhr = new XMLHttpRequest()
     } else if (window.ActiveXObject) {
         xhr = new ActiveXObject("Microsoft.XMLHTTP")
     }
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            callback(xhr.responseText);
+    xhr.open('GET', API, true);
+    xhr.onload  = function () {
+        if (xhr.status === 200) {
+            resolve(xhr.responseText);
+        } else {
+            reject(Error('Произошла ошибка. Код ошибки:' + xhr.statusText));
         }
     }
-
-    xhr.open('GET', url, true);
     xhr.send();
-}
-makeGETRequest(API, (data) => {
-    console.log(data);
 });
+
+promise
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((err) => {
+        console.log(err);
+      })
+  
+
