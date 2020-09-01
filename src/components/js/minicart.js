@@ -1,4 +1,4 @@
-let bascket2 = [
+const bascket2 = [
     { id: 0, name: "MANGO PEOPLE T-SHIRT", price: 52, img: "../src/assets/img/Layer_2.jpg", amount: 2 },
     { id: 1, name: "MANGO PEOPLE T-SHIRT", price: 54, img: "../src/assets/img/Layer_3.jpg", amount: 3 },
     { id: 2, name: "MANGO PEOPLE T-SHIRT", price: 53, img: "../src/assets/img/Layer_4.jpg", amount: 4 },
@@ -9,16 +9,20 @@ let bascket2 = [
     { id: 7, name: "MANGO PEOPLE T-SHIRT", price: 90, img: "../src/assets/img/Layer_9.jpg", amount: 9 }
 ];
 
-let catalog2 = {
-    items: [],
-    shown: false,
+class Catalog {
+    constructor() {
+    this.items = [];
+  }
+  _fetchItems() {
+    this.items = bascket2;
+  }
         
     init() {
 
 
         this.container = document.querySelector('.jsCart');
         this.container2 = document.querySelector('.mainMiniCart');
-        this.items = bascket2;
+        this._fetchItems();
         setTimeout(() => {
             this._render();
             this._handleActions();
@@ -26,7 +30,7 @@ let catalog2 = {
         }, 300);
 
 
-    },
+    }
     _render() {
         let html = '';
         this.items.forEach(us => {
@@ -59,7 +63,7 @@ let catalog2 = {
                        
         this.container.innerHTML = html;
         
-    },
+    }
     _changeAmount() {
         this.amounts = 0;
         this.items.forEach(us => {
@@ -71,7 +75,7 @@ let catalog2 = {
         document.querySelector('.totalAmount').innerHTML= '$'+this.amounts;
             
     
-    },
+    }
     _handleActions() {
         document.querySelector('.headerCart').addEventListener('click', () => {
             this.container.classList.toggle('invisible');
@@ -92,7 +96,7 @@ let catalog2 = {
         document.querySelector('.checkout').addEventListener('click', ev => {
             document.location.href = "checkout.html";
         })
-    },
+    }
     _remove(id) {
         let find = this.items.find(el => el.id == id);
         if (find.amount > 1) {
@@ -108,8 +112,8 @@ let catalog2 = {
 }
 
 
+const list = new Catalog();
+list.init();
 
-
-catalog2.init();
 
 
