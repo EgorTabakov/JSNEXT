@@ -23,12 +23,26 @@
             </div>
             <form method="get" class="search">
                 <div class="searchBrowse">Browse <i class="fas fa-caret-down"></i></div>
-                <input name="search" type="text" placeholder="Search for Item...">
-                <button><i class="fas fa-search"></i></button>
+                <input class="findValue" name="search" type="text" placeholder="Search for Item...">
+                <button id ="search"><i class="fas fa-search"></i></button>
             </form>
             <div class="accountCart">
-                <img src="../src/assets/img/cart.png" alt="" class="headerCart">
+                <img src="../src/assets/img/cart.png" alt="" class="headerCart" id="addToCart">
                 <button class="accountBtn">My Account <i class="fas fa-caret-down"></i></button>
+                <div class="mainMiniCart invisible">
+                    <div class="shopCartMini invisible jsCart">
+
+                    </div>
+                    <div class="miniCartTotalPrice ">
+                        <div class="total">
+                            <div>total</div>
+                            <div class="totalAmount"></div>
+                        </div>
+                        <button class="checkout" aria-label="checkout">checkout</button>
+                        <button class="goToCart" aria-label="goToCart">go to cart</button>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -217,6 +231,7 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
     <script src="../src/components/js/catalog.js"></script>
+    <script src="../src/components/js/minicart.js"></script>
 </body>
 
 </html>
