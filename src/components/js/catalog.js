@@ -2,7 +2,10 @@ const API = 'https://raw.githubusercontent.com/EgorTabakov/static/master/JSON/ca
 
 const cart = document.querySelector('.headerCart');
 const container = document.querySelector('.itemJS');
-const reg = /\S+/;
+const findButton = document.getElementById('search');
+const findValue = document.querySelector('.findValue');
+
+
 
 let items = [];
 const promise = new Promise((resolve, reject) => {
@@ -33,14 +36,6 @@ promise
     })
 
 
-function search() {
-
-    let b = document.getElementsById("searchText").value;
-    console.log(b);
-    }
-
-    
-document.getElementById("search").onclick = search;
 
 
 class Data {
@@ -54,59 +49,24 @@ class Data {
     }
 
     _massive() {
-        this.fileNameSt = this._file();
-        if (this.fileNameSt == 'index.html') {
-            this.names = ['MANGO PEOPLE T-SHIRT', 'KIWI PEOPLE T-SHIRT', 'PINEAPPLE PEOPLE T-SHIRT', 'APPLE PEOPLE T-SHIRT', 'HELLO T-SHIRT', 'WORLD T-SHIRT', 'ELEMENT T-SHIRT', 'JS T-SHIRT'];
-            this.prices = [52, 54, 53, 55, 58, 60, 80, 90];
-            this.imgs = [
-                '../src/assets/img/Layer_2.jpg',
-                '../src/assets/img/Layer_3.jpg',
-                '../src/assets/img/Layer_4.jpg',
-                '../src/assets/img/Layer_5.jpg',
-                '../src/assets/img/Layer_6.jpg',
-                '../src/assets/img/Layer_7.jpg',
-                '../src/assets/img/Layer_8.jpg',
-                '../src/assets/img/Layer_9.jpg'
-            ];
+        this.names = ['MANGO PEOPLE T-SHIRT', 'KIWI PEOPLE T-SHIRT', 'PINEAPPLE PEOPLE T-SHIRT', 'APPLE PEOPLE T-SHIRT', 'HELLO T-SHIRT', 'WORLD T-SHIRT', 'ELEMENT T-SHIRT', 'JS T-SHIRT'];
+        this.prices = [52, 54, 53, 55, 58, 60, 80, 90];
+        this.imgs = [
+            '../src/assets/img/Layer_2.jpg',
+            '../src/assets/img/Layer_3.jpg',
+            '../src/assets/img/Layer_4.jpg',
+            '../src/assets/img/Layer_5.jpg',
+            '../src/assets/img/Layer_6.jpg',
+            '../src/assets/img/Layer_7.jpg',
+            '../src/assets/img/Layer_8.jpg',
+            '../src/assets/img/Layer_9.jpg'
+        ];
 
-        } else if (this.fileNameSt == 'catalog.html') {
 
-            this.names = ['TT MANGO PEOPLE T-SHIRT', 'KIWI PEOPLE T-SHIRT', 'PINEAPPLE PEOPLE T-SHIRT', 'APPLE PEOPLE T-SHIRT', 'HELLO PEOPLE T-SHIRT', 'WORLD PEOPLE T-SHIRT', 'ELEMENT PEOPLE T-SHIRT', 'JS PEOPLE T-SHIRT', 'HTML PEOPLE T-SHIRT'];
-            this.prices = [15, 2, 59, 53, 55, 70, 60, 80, 90];
-            this.imgs = [
-                '../src/assets/img/cart_pr_1.jpg',
-                '../src/assets/img/cart_pr_2.jpg',
-                '../src/assets/img/cart_pr_3.jpg',
-                '../src/assets/img/cart_pr_4.jpg',
-                '../src/assets/img/cart_pr_5.jpg',
-                '../src/assets/img/cart_pr_6.jpg',
-                '../src/assets/img/cart_pr_7.jpg',
-                '../src/assets/img/cart_pr_8.jpg',
-                '../src/assets/img/cart_pr_9.jpg'
-            ];
-            this.sizes = [M, L, S, XL, XXL, XS, S, M, L];
-
-        } else {
-            this.names = ['BLAZE LEGGINGS', 'ALEXA SWEATER', 'AGNES TOP', 'SYLVA SWEATER'];
-            this.prices = [15, 2, 59, 53];
-            this.imgs = [
-                '../src/assets/img/products_1.png',
-                '../src/assets/img/products_2.png',
-                '../src/assets/img/products_3.png',
-                '../src/assets/img/products_4.jpg'
-            ];
-        }
         return this.names, this.prices, this.imgs;
     }
 
-    _file() {
 
-        let st = window.location.href;
-        let longame = st.substring(st.lastIndexOf('/') + 1, st.length);
-        let fileName = longame.substring(0, longame.lastIndexOf('?'));
-        return fileName;
-
-    }
 }
 const listData = new Data();
 listData._fetchItems();
@@ -132,7 +92,12 @@ class ListItems {
     }
 
     _createItem(id, name, price, img) {
-        return { id, name, price, img }
+        return {
+            id,
+            name,
+            price,
+            img
+        }
     }
 }
 const listItems = new ListItems();
@@ -142,49 +107,68 @@ class MainCatalog {
 
     constructor() {
         this.items = [];
+        this.filteredProducts = [];
         this.cart = null;
     }
     _fetchItems() {
         this.items = listItems.arr;
-        this.fileNameSt = listData.fileNameSt;
+        this.filteredProducts = listItems.arr;
     }
 
     _init() {
         this.cart = cart;
         this.container = container;
-        this._fetchItems();
+        
+        
         this._render();
 
     }
 
-    _render() {
-        let html = '';
-        this.items.forEach(({ id, name, price, img }) => {
-            if (this.fileNameSt == 'product.html') {
-                html += `
-                <div class="youMayProducts youMayProducts${id}">
-                <h3>${name}</h3>
-                <p>$${price}</p>
-                </div>
-                `
-            } else {
+    _render(prod) {
+       
 
-                html += `
+        if (prod && prod.length > 0) {
+            this.filteredProducts = prod;
+
+        } else {
+            this._fetchItems(); 
+        }
+            
+        let html = '';
+        this.filteredProducts.forEach(({
+            id,
+            name,
+            price,
+            img
+        }) => {
+            html += `
             <div class="itemsProduct itemsProduct${id}" style="background: url(${img}) no-repeat, url(../src/assets/img/Background.png) no-repeat;">
                         <h3>${name}</h3>
                         <p>$${price}</p>
                         <button id="${id}" class="itemsCart">Add to Cart</button>
             </div>
              `
-            }
+
         })
         this.container.innerHTML = html;
     }
-};
+    
 
+    filterProducts(value) {
+        const regexp = new RegExp(value, `i`);
+        const filteredProducts = this.items.filter(product => regexp.test(product.name));
+        this._render(filteredProducts);
+
+    }
+};
 const listCatalog = new MainCatalog();
 listCatalog._init();
 
+// findButton.addEventListener('click', e => {
+
+//     listCatalog.filterProducts(findValue.value);
+
+// });
 
 class Bascket {
     constructor(container) {
@@ -216,3 +200,30 @@ class Bascket {
 
 const listBasket = new Bascket(container);
 listBasket._handler();
+
+findButton.addEventListener('click', e => {
+app.filterProducts
+})
+
+const app = new Vue({
+    
+    
+    el: '#vuesearchInput',
+    
+    data: {
+      inputvalue: 'search',
+      list: listCatalog
+    },
+    methods: {
+        filterProducts() {
+            const regexp = new RegExp(this.inputvalue, `i`);
+            const filteredProducts = listCatalog.items.filter(product => regexp.test(product.name));
+            
+            listCatalog._render(filteredProducts);
+    
+        } 
+    }
+  }) 
+//   
+
+

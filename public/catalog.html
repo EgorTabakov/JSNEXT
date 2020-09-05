@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../src/layout/styles/catalog.css">
     <link rel="stylesheet" href="../src/layout/styles/media-queries.css">
     <script src="https://kit.fontawesome.com/861689887d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
@@ -23,8 +24,8 @@
             </div>
             <form method="get" class="search">
                 <div class="searchBrowse">Browse <i class="fas fa-caret-down"></i></div>
-                <input name="search" id ="searchText" type="text" placeholder="Search for Item...">
-                <button id="search"><i class="fas fa-search"></i></button>
+                <input id= "vuesearchInput" class="findValue" name="search" type="text" placeholder="Search for Item..." v-model= "inputvalue">
+                <button id ="search" class="searchvueButton"><i class="fas fa-search" ></i></button>
             </form>
             <div class="accountCart">
                 <img src="../src/assets/img/cart.png" alt="" class="headerCart" id="addToCart">
@@ -355,6 +356,7 @@
     <script src="../src/components/js/accordion.js"></script>
     <script src="../src/components/js/minicart.js"></script>
     <script src="../src/components/js/catalog.js"></script>
+    
 
 </body>
 
