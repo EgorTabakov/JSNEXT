@@ -118,22 +118,20 @@ class MainCatalog {
     _init() {
         this.cart = cart;
         this.container = container;
-        
-        
         this._render();
 
     }
 
     _render(prod) {
-       
 
+        console.log(prod)
         if (prod && prod.length > 0) {
             this.filteredProducts = prod;
 
         } else {
-            this._fetchItems(); 
+            this._fetchItems();
         }
-            
+
         let html = '';
         this.filteredProducts.forEach(({
             id,
@@ -152,14 +150,14 @@ class MainCatalog {
         })
         this.container.innerHTML = html;
     }
-    
 
-    filterProducts(value) {
-        const regexp = new RegExp(value, `i`);
-        const filteredProducts = this.items.filter(product => regexp.test(product.name));
-        this._render(filteredProducts);
 
-    }
+    // filterProducts(value) {
+    //     const regexp = new RegExp(value, `i`);
+    //     const filteredProducts = this.items.filter(product => regexp.test(product.name));
+    //     this._render(filteredProducts);
+
+    // }
 };
 const listCatalog = new MainCatalog();
 listCatalog._init();
@@ -201,29 +199,34 @@ class Bascket {
 const listBasket = new Bascket(container);
 listBasket._handler();
 
-findButton.addEventListener('click', e => {
-app.filterProducts
-})
+
 
 const app = new Vue({
-    
-    
-    el: '#vuesearchInput',
-    
+
+
+    el: '#search',
+
     data: {
-      inputvalue: 'search',
-      list: listCatalog
+        inputvalue: 'search',
+        list: listCatalog
     },
     methods: {
         filterProducts() {
             const regexp = new RegExp(this.inputvalue, `i`);
             const filteredProducts = listCatalog.items.filter(product => regexp.test(product.name));
-            
             listCatalog._render(filteredProducts);
-    
-        } 
+        },
+        myClickHandler: function (e) {
+            this.filterProducts()
+
+
+        }
+
+
+
     }
-  }) 
-//   
+
+})
+//
 
 
