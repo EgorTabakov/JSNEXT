@@ -245,6 +245,7 @@ const app = new Vue({
         this.makeGETRequest(`${API_URL}/catalogData.json`, (goods) => {
             this.goods = goods;
             this.filteredGoods = goods;
+            console.log(this.filteredGoods)
 
         });
     }
