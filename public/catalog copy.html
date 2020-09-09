@@ -192,13 +192,12 @@
 
 
                     <div class="catalogItems" id="app">
-                        <div class="itemsProduct" v-for="good in filteredGoods">
-                             
+                        <div class="itemsProduct" v-for="good in filteredProducts" :style="{ background: 'url(' + good.img + ') no-repeat, url(../src/assets/img/Background.png) no-repeat'}">
+                                                             
+                                <h3>{{ good.productName }}</h3>
+                                <p>{{ good.productPrice }}</p>
                                 
-                                <h3>{{ good.product_name }}</h3>
-                                <p>{{ good.price }}</p>
-                                <!-- <p >{{}}</p> -->
-                                <button id="${id}" class="itemsCart">Add to Cart</button>
+                                <button v-bind:id="good.productId" class="itemsCart">Add to Cart</button>
                             
                         </div>
                     </div>
