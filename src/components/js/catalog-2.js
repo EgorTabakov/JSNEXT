@@ -200,7 +200,7 @@
 // listBasket._handler();
 
 
-const API_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
+const API_URL = 'https://raw.githubusercontent.com/EgorTabakov/static/master/JSON/';
 const app = new Vue({
 
 
@@ -208,7 +208,7 @@ const app = new Vue({
 
     data: {
         goods: [],
-        filteredGoods: [],
+        filteredProducts: [],
         searchLine: '',
         hello: 'hi'
         // inputvalue: 'search',
@@ -236,16 +236,34 @@ const app = new Vue({
             xhr.open('GET', url, true);
             xhr.send();
 
-        }
+        },
+        
+        // filterProducts() {
+        //     const regexp = new RegExp(this.inputvalue, `i`);
+        //     const filteredProducts = this.goods.filter(product => regexp.test(product.productName));
+        //     this.filteredProducts = (filteredProducts);
+        // },
+        // myClickHandler: function (e) {
+        //     this.filterProducts()
+        
+        
+        // }
     },
 
+    created() {
 
+<<<<<<< Updated upstream
     mounted() {
 
         this.makeGETRequest(`${API_URL}/catalogData.json`, (goods) => {
             this.goods = goods;
             this.filteredGoods = goods;
             console.log(this.filteredGoods)
+=======
+        this.makeGETRequest(`${API_URL}/catalog.json`, (goods) => {
+            this.goods = JSON.parse(goods);
+            this.filteredProducts = this.filterProducts()
+>>>>>>> Stashed changes
 
         });
     }
@@ -254,32 +272,4 @@ const app = new Vue({
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-// filterProducts() {
-//     const regexp = new RegExp(this.inputvalue, `i`);
-//     const filteredProducts = listCatalog.items.filter(product => regexp.test(product.name));
-//     listCatalog._render(filteredProducts);
-// },
-// myClickHandler: function (e) {
-//     this.filterProducts()
-
-
-// }
-
-
-
-//     }
-
-// })
-//
 
