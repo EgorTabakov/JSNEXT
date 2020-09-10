@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div >
+    <div id="app">
         <header class="headerFix">
             <div class="container header">
                 <div class="log">
@@ -23,14 +23,15 @@
                         Bran<span>d</span>
                     </a>
                 </div>
-                <!-- <form method="get" class="search" id="search">
+                
 
-                    <div class="searchBrowse">Browse <i class="fas fa-caret-down"></i></div>
-                    <input class="findValue" name="search" type="text" placeholder="Search for Item..."
-                        v-model="inputvalue">
-                    <button v-on:click="myClickHandler"><i class="fas fa-search"></i></button>
+                    
+                    <topbar @search="searchQuery = $event"></topbar>
+                   
 
-                </form> -->
+                    
+
+                
                 <div class="accountCart">
                     <img src="../src/assets/img/cart.png" alt="" class="headerCart" id="addToCart">
                     <button class="accountBtn">My Account <i class="fas fa-caret-down"></i></button>
@@ -191,16 +192,9 @@
                     </div>
 
 
-                    <div class="catalogItems" id="app">
-                        <div class="itemsProduct" v-for="good in filteredProducts" :style="{ background: 'url(' + good.img + ') no-repeat, url(../src/assets/img/Background.png) no-repeat'}">
-                                                             
-                                <h3>{{ good.productName }}</h3>
-                                <p>{{ good.productPrice }}</p>
-                                
-                                <button v-bind:id="good.productId" class="itemsCart">Add to Cart</button>
-                            
-                        </div>
-                    </div>
+                    
+                        <product-list :query="searchQuery"></product-list>
+                    
                     <div class="catalogFooter">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
@@ -365,9 +359,11 @@
         crossorigin="anonymous"></script>
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script src="../src/components/js/accordion.js"></script>
-    <!-- <script src="../src/components/js/minicart.js"></script> -->
-    <script src="../src/components/js/catalog-2.js"></script>
-
+    <script src="../src/components/js/api.js"></script>
+    <script src="../src/components/js/products-list.js"></script>
+    <script src="../src/components/js/search.js"></script>
+    <script src="../src/components/js/topbar.js"></script>
+        <script src="../src/components/js/main.js"></script>
 
 </body>
 
