@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <div id="app">
     <header class="headerFix">
         <div class="container header">
             <div class="log">
@@ -22,10 +23,12 @@
                     Bran<span>d</span>
                 </a>
             </div>
-            <form method="get" class="search">
+            <form method="get" class="search" id ="search">
+                
                 <div class="searchBrowse">Browse <i class="fas fa-caret-down"></i></div>
-                <input id= "vuesearchInput" class="findValue" name="search" type="text" placeholder="Search for Item..." v-model= "inputvalue">
-                <button id ="search" class="searchvueButton"><i class="fas fa-search" ></i></button>
+                <input class="findValue" name="search" type="text" placeholder="Search for Item..." v-model= "inputvalue">
+                <button  v-on:click="myClickHandler"><i class="fas fa-search" ></i></button>
+                
             </form>
             <div class="accountCart">
                 <img src="../src/assets/img/cart.png" alt="" class="headerCart" id="addToCart">
@@ -46,8 +49,8 @@
 
             </div>
         </div>
-        </div>
-        </div>
+        
+        
         <div class="headerLine"></div>
         <div class="topNavWrap container-fluid">
             <nav class="topNav container">
@@ -343,6 +346,7 @@
             </div>
         </div>
     </div>
+</div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
