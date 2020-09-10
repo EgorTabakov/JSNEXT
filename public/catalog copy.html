@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div >
+    <div id="app">
         <header class="headerFix">
             <div class="container header">
                 <div class="log">
@@ -23,14 +23,16 @@
                         Bran<span>d</span>
                     </a>
                 </div>
-                <!-- <form method="get" class="search" id="search">
+                <form method="get" class="search" id="search">
 
                     <div class="searchBrowse">Browse <i class="fas fa-caret-down"></i></div>
-                    <input class="findValue" name="search" type="text" placeholder="Search for Item..."
-                        v-model="inputvalue">
+                    <search-input @search="onSearchHandler"></search-input>
+                    <!-- <input class="findValue" name="search" type="text" placeholder="Search for Item..." v-model="inputvalue"> -->
                     <button v-on:click="myClickHandler"><i class="fas fa-search"></i></button>
 
-                </form> -->
+                    
+
+                </form>
                 <div class="accountCart">
                     <img src="../src/assets/img/cart.png" alt="" class="headerCart" id="addToCart">
                     <button class="accountBtn">My Account <i class="fas fa-caret-down"></i></button>
@@ -365,9 +367,10 @@
         crossorigin="anonymous"></script>
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script src="../src/components/js/accordion.js"></script>
-    <!-- <script src="../src/components/js/minicart.js"></script> -->
-    <script src="../src/components/js/catalog-2.js"></script>
-
+    <script src="../src/components/js/api.js"></script>
+    <script src="../src/components/js/products-list.js"></script>
+    <script src="../src/components/js/search.js"></script>
+        <script src="../src/components/js/main.js"></script>
 
 </body>
 

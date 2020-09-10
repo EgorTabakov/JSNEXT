@@ -1,40 +1,43 @@
 // const API = 'https://raw.githubusercontent.com/EgorTabakov/static/master/JSON/catalog.json';
 
-// const cart = document.querySelector('.headerCart');
-// const container = document.querySelector('.itemJS');
-// const findButton = document.getElementById('search');
-// const findValue = document.querySelector('.findValue');
+// const API_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
+// Vue.component('catalogItems', {
+//     props: ['goods'],
+//     template: `
+//     <div class="catalogItems">
+//         <itemsProduct v-for="good in goods" :good="good"></itemsProduct>
+//     </div>
+   
+//   `
 
-
-// let items = [];
-// const promise = new Promise((resolve, reject) => {
-
-//     let xhr;
-//     if (window.XMLHttpRequest) {
-//         xhr = new XMLHttpRequest()
-//     } else if (window.ActiveXObject) {
-//         xhr = new ActiveXObject("Microsoft.XMLHTTP")
-//     }
-//     xhr.open('GET', API, true);
-//     xhr.onload = function () {
-//         if (xhr.status === 200) {
-//             resolve(xhr.responseText);
-//         } else {
-//             reject(Error('Произошла ошибка. Код ошибки:' + xhr.statusText));
-//         }
-//     }
-//     xhr.send();
 // });
 
-// promise
-//     .then((result) => {
-//         // console.log(result);
-//     })
-//     .catch((err) => {
-//         console.log(err);
-//     })
+// Vue.component('itemsProduct', {
+//     props: ['good'],
+   
+//     computed: {
+//     url: function () {
+//         return good.img 
+        
+//       }
+     
+//    },
+ 
 
+//     template: `
+    
+//     <div class="itemsProduct" style="background: url({{ good.img  }}) no-repeat, url(../src/assets/img/Background.png) no-repeat"> 
+                             
+                     
+//         <h3>{{ good.productName }}</h3>
+//         <p>{{ good.productPrice }}</p>
+//         <button :id="good.productId" class="itemsCart">Add to Cart</button>
+
+//     </div>
+
+//   `
+// });
 
 
 
@@ -200,7 +203,7 @@
 // listBasket._handler();
 
 
-const API_URL = 'https://raw.githubusercontent.com/EgorTabakov/static/master/JSON/';
+const API_URL = 'https://raw.githubusercontent.com/EgorTabakov/static/master/JSON';
 const app = new Vue({
 
 
@@ -216,7 +219,7 @@ const app = new Vue({
     },
     methods: {
         makeGETRequest(url, callback) {
-            const API_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
+            const API_URL = 'https://raw.githubusercontent.com/EgorTabakov/static/master/JSON';
 
             var xhr;
 
@@ -238,32 +241,24 @@ const app = new Vue({
 
         },
         
-        // filterProducts() {
-        //     const regexp = new RegExp(this.inputvalue, `i`);
-        //     const filteredProducts = this.goods.filter(product => regexp.test(product.productName));
-        //     this.filteredProducts = (filteredProducts);
-        // },
-        // myClickHandler: function (e) {
-        //     this.filterProducts()
+        filterProducts() {
+            const regexp = new RegExp(this.inputvalue, `i`);
+            const filteredProducts = this.goods.filter(product => regexp.test(product.productName));
+            this.filteredProducts = (filteredProducts);
+        },
+        myClickHandler: function (e) {
+            this.filterProducts()
         
         
-        // }
+        }
     },
 
     created() {
 
-<<<<<<< Updated upstream
-    mounted() {
-
-        this.makeGETRequest(`${API_URL}/catalogData.json`, (goods) => {
-            this.goods = goods;
-            this.filteredGoods = goods;
-            console.log(this.filteredGoods)
-=======
         this.makeGETRequest(`${API_URL}/catalog.json`, (goods) => {
             this.goods = JSON.parse(goods);
-            this.filteredProducts = this.filterProducts()
->>>>>>> Stashed changes
+            this.filteredProducts = JSON.parse(goods);
+
 
         });
     }
@@ -272,4 +267,32 @@ const app = new Vue({
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+// filterProducts() {
+//     const regexp = new RegExp(this.inputvalue, `i`);
+//     const filteredProducts = listCatalog.items.filter(product => regexp.test(product.name));
+//     listCatalog._render(filteredProducts);
+// },
+// myClickHandler: function (e) {
+//     this.filterProducts()
+
+
+// }
+
+
+
+//     }
+
+// })
+//
 
