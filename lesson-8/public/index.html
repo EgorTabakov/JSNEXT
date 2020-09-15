@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lesson1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../src/layout/styles/styles.css">
+    <link rel="stylesheet" href="../src/layout/styles/media-queries.css">
+    <script src="https://kit.fontawesome.com/861689887d.js" crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+    <header class="headerFix">
+        <div class="container header">
+            <div class="log">
+                <a class="logo" href="#">
+                    Bran<span>d</span>
+                </a>
+            </div>
+            <form method="get" class="search">
+                <div class="searchBrowse">Browse <i class="fas fa-caret-down"></i></div>
+                <input class="findValue" name="search" type="text" placeholder="Search for Item...">
+                <button id ="search"><i class="fas fa-search"></i></button>
+            </form>
+            <div class="accountCart">
+                <img src="../src/assets/img/cart.png" alt="" class="headerCart" id="addToCart">
+                <button class="accountBtn">My Account <i class="fas fa-caret-down"></i></button>
+                <div class="mainMiniCart invisible">
+                    <div class="shopCartMini invisible jsCart">
+
+                    </div>
+                    <div class="miniCartTotalPrice ">
+                        <div class="total">
+                            <div>total</div>
+                            <div class="totalAmount"></div>
+                        </div>
+                        <button class="checkout" aria-label="checkout">checkout</button>
+                        <button class="goToCart" aria-label="goToCart">go to cart</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="headerLine"></div>
+        <div class="topNavWrap container-fluid">
+            <nav class="topNav container">
+                <a href="#">Home</a>
+                <a href="#">Man</a>
+                <a href="#">Women</a>
+                <a href="#">Kids</a>
+                <a href="#">Accoseriese</a>
+                <a href="#">Featured</a>
+                <a href="#">Hot Deals</a>
+            </nav>
+        </div>
+
+    </header>
+    <main>
+        <div class="topBanner container-fluid">
+            <div class="topMan container">
+                <div class="bannerText">
+                    <div>
+                        <h2>the brand</h2>
+                    </div>
+                    <span>of luxerious </span><span>fashion</span>
+                </div>
+            </div>
+        </div>
+        <div class="category container">
+            <a class="product product1" href="#">
+                <div class="badge">
+                    <h2>hot deal</h2>
+                    <span>for men</span>
+                </div>
+            </a>
+            <a class="product product2" href="#">
+                <div class="badge">
+                    <h2>luxirous & trendy</h2>
+                    <span>accesories</span>
+                </div>
+            </a>
+            <a class="product product3" href="#">
+                <div class="badge">
+                    <h2>30% offer</h2>
+                    <span>women</span>
+                </div>
+            </a>
+            <a class="product product4" href="#">
+                <div class="badge">
+                    <h2>new arrivals</h2>
+                    <span>for kids</span>
+                </div>
+            </a>
+        </div>
+        <div class="featuredItemsHeader container">
+            <h2>Fetured Items</h2>
+            <p>Shop for items based on what we featured in this week</p>
+        </div>
+        <div class="featuredItems itemJS container">
+            <div class="itemsProduct itemsProduct1">
+            </div>
+        </div>
+
+
+        <div class="allProduct container">
+            <button>Browse All Product <i class="fas fa-long-arrow-alt-right"></i></button>
+        </div>
+        <div class="feature container">
+            <div class="featureBanner">
+                <div class="featureBannerText">
+                    <h2>30% <span>offer</span></h2><br>
+                    <p>for women</p>
+                </div>
+            </div>
+            <div class="featureBox">
+                <img src="../src/assets/img/car.png" alt="car">
+                <div class="featureBoxText">
+                    <h4>Free Delivery</h4>
+                    <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive
+                        models.</p>
+                </div>
+                <img src="../src/assets/img/persent.png" alt="persent">
+                <div class="featureBoxText">
+                    <h4>Sales & discounts</h4>
+                    <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive
+                        models.</p>
+                </div>
+                <img src="../src/assets/img/crown.png" alt="crown">
+                <div class="featureBoxText">
+                    <h4>Quality assurance</h4>
+                    <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive
+                        models.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="subscribeWrap container-fluid">
+        <div class="subscribe container-fluid">
+            <div class="subscribeBanner container">
+                <div class="subscribeLeft col-lg-6 col-md-12">
+                    <div class="subscribePerson">
+                        <img src="../src/assets/img/person.png" alt="person">
+                        <p>“Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+                            a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”</p>
+                        <p>Bin Burhan </p>
+                        <p>Dhaka, Bd</p>
+                        <div class="subscribeBannersNav1"></div>
+                        <div class="subscribeBannersNav2"></div>
+                        <div class="subscribeBannersNav3"></div>
+                    </div>
+                </div>
+                <div class="subscribeRight col-lg-6 col-md-12">
+                    <form class="subscribeForm" method="get">
+                        <div class="subscribeText">
+                            <p>Subscribe</p>
+                            <p>for our newlettre and promotion</p>
+                        </div>
+                        <div class="subscribeButton">
+                            <input type="email" placeholder="Enter Your Email"
+                                pattern="([A-z0-9_.-]1,)@([A-z0-9_.-]1,).([A-z]2,8)" required>
+                            <button>Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid">
+        <div class="footer container">
+            <div class="brand col-xl-4 col-lg-12">
+                <a class="logo" href="#">
+                    Bran<span>d</span>
+                </a>
+                <p>Objectively transition extensive data rather than cross functional solutions.
+                    Monotonectally syndicate multidisciplinary materials before go forward benefits.
+                    Intrinsicly syndicate an expanded array of processes and cross-unit partnerships.<br><br>
+                    Efficiently plagiarize 24/365 action items and focused infomediaries.
+                    Distinctively seize superior initiatives for wireless technologies.
+                    Dynamically optimize. Objectively strategize seamless relationships via resource sucking testing
+                    procedures.
+                    Proactively cultivate next-generation results for value-added methodologies.
+                    Dynamically plagiarize unique methodologies after performance based methodologies.
+                    Monotonectally empower stand-alone mindshare rather than ubiquitous opportunities.
+                    Dynamically orchestrate resource sucking scenarios after alternative synergy.
+                    Compellingly envisioneer corporate methods of empowerment before standards compliant technologies.
+                    Objectively facilitate progressive.
+                </p>
+            </div>
+            <nav class="company">
+                <h2>company</h2>
+                <a class="footerLink" href="#">Home</a>
+                <a class="footerLink" href="#">Shop</a>
+                <a class="footerLink" href="#">About</a>
+                <a class="footerLink" href="#">How It Works</a>
+                <a class="footerLink" href="#">Contact</a>
+            </nav>
+            <nav class="information">
+                <h2>information</h2>
+                <a class="footerLink" href="#">Tearms & Condition</a>
+                <a class="footerLink" href="#">Privacy Policy</a>
+                <a class="footerLink" href="#">How to Buy</a>
+                <a class="footerLink" href="#">How to Sell</a>
+                <a class="footerLink" href="#">Promotion</a>
+            </nav>
+
+            <nav class="shopCategory">
+                <h2>shopCategory</h2>
+                <a class="footerLink" href="#">Men</a>
+                <a class="footerLink" href="#">Women</a>
+                <a class="footerLink" href="#">Child</a>
+                <a class="footerLink" href="#">Apparel</a>
+                <a class="footerLink" href="#">Brows All</a>
+            </nav>
+        </div>
+    </footer>
+    <div class="socialBack container-fluid">
+        <div class="social container">
+            <p>© 2017 Brand All Rights Reserved.</p>
+            <div class="socialBlockIcon">
+                <a class="socialIcon" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="socialIcon" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="socialIcon" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a class="socialIcon" href="#"><i class="fab fa-pinterest-p"></i></a>
+                <a class="socialIcon" href="#"><i class="fab fa-google-plus-g"></i></a>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="../src/components/js/catalog.js"></script>
+    <script src="../src/components/js/minicart.js"></script>
+</body>
+
+</html>

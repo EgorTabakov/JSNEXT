@@ -5,3 +5,9 @@ class ProductService {
     return fetch(`${API_BASE}/catalog.json`).then(data => data.json());
   }
 }
+
+class CartService {
+  static getCart() {
+    return fetch(`${API_BASE}/cart.json`).then(data => data.json());
+  }
+}

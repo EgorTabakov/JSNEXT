@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>checkout</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../src/layout/styles/styles.css">
+    <link rel="stylesheet" href="../src/layout/styles/checkout.css">
+    <link rel="stylesheet" href="../src/layout/styles/media-queries.css">
+    <script src="https://kit.fontawesome.com/861689887d.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header class="headerFix">
+        <div class="container header">
+            <div class="log">
+                <a class="logo" href="#">
+                    Bran<span>d</span>
+                </a>
+            </div>
+            <form method="get" class="search">
+                <div class="searchBrowse">Browse <i class="fas fa-caret-down"></i></div>
+                <input class="findValue" name="search" type="text" placeholder="Search for Item...">
+                <button id ="search"><i class="fas fa-search"></i></button>
+            </form>
+            <div class="accountCart">
+                <img src="../src/assets/img/cart.png" alt="" class="headerCart" id="addToCart">
+                <button class="accountBtn">My Account <i class="fas fa-caret-down"></i></button>
+                <div class="mainMiniCart invisible">
+                    <div class="shopCartMini invisible jsCart">
+
+                    </div>
+                    <div class="miniCartTotalPrice ">
+                        <div class="total">
+                            <div>total</div>
+                            <div class="totalAmount"></div>
+                        </div>
+                        <button class="checkout" aria-label="checkout">checkout</button>
+                        <button class="goToCart" aria-label="goToCart">go to cart</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="headerLine"></div>
+        <div class="topNavWrap container-fluid">
+            <nav class="topNav container">
+                <a href="#">Home</a>
+                <a href="#">Man</a>
+                <a href="#">Women</a>
+                <a href="#">Kids</a>
+                <a href="#">Accoseriese</a>
+                <a href="#">Featured</a>
+                <a href="#">Hot Deals</a>
+            </nav>
+        </div>
+
+    </header>
+    <main class="newArrivalsWrap">
+        <div class="newArrivals container-fluid">
+            <div class="newArrivalsText container">
+                <div>
+                    <h2>New Arrivals</h2>
+                </div>
+                <div>
+                    <a href="#">Home /</a>
+                    <a href="#">Men /</a>
+                    <a href="#">New Arrivals</a>
+                </div>
+            </div>
+        </div>
+        <div class="accordion container" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            01. Shipping Adress
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <h2>Check as a guest or register</h2>
+                                <span>Register with us for future convenience</span>
+                                <form>
+                                    <div class="form-check form-check-radio">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="exampleRadios1" value="option1" checked>
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            checkout as guest
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-radio">
+                                        <input class="form-check-input" type="radio" name="exampleRadios"
+                                            id="exampleRadios2" value="option1" checked>
+                                        <label class="form-check-label" for="exampleRadios1">
+                                            register
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <h2>register and save time!</h2>
+                                        <span>Register with us for future convenience</span>
+                                    </div>
+                                    <div class="form-check">
+                                        <a href="#"><i class="fas fa-angle-double-right"></i> Fast and easy
+                                            checkout</a><br>
+                                        <a href="#"><i class="fas fa-angle-double-right"></i> Easy access to your order
+                                            history and status</a>
+
+                                    </div>
+                                    <button type="submit" class="btn btn-continue">Continue</button>
+                                </form>
+                            </div>
+                            <div class="col">
+                                <h2>Already registed?</h2>
+                                <span>Please log in below</span>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address<span class="red"> *</span></label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp">
+                                        <small id="emailHelp" class="form-text text-muted"></small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password<span class="red"> *</span></label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <span class="red">* Required Fileds</span>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">Log in</button>
+                                    <a href="#">Forgot Password ?</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            02. BILLING INFORMATION
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                        coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+                        of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            03. SHIPPING INFORMATION
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                        coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+                        of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFour">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            04. SHIPPING METHOD
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                        coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+                        of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFive">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            05. PAYMENT METHOD
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                        coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+                        of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingSix">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            06. ORDER REVIEW
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                        coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+                        of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <div class="subscribeWrap container-fluid">
+        <div class="subscribe container-fluid">
+            <div class="subscribeBanner container">
+                <div class="subscribeLeft col-lg-6 col-md-12">
+                    <div class="subscribePerson">
+                        <img src="../src/assets/img/person.png" alt="person">
+                        <p>“Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+                            a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”</p>
+                        <p>Bin Burhan </p>
+                        <p>Dhaka, Bd</p>
+                        <div class="subscribeBannersNav1"></div>
+                        <div class="subscribeBannersNav2"></div>
+                        <div class="subscribeBannersNav3"></div>
+                    </div>
+                </div>
+                <div class="subscribeRight col-lg-6 col-md-12">
+                    <form class="subscribeForm" method="get">
+                        <div class="subscribeText">
+                            <p>Subscribe</p>
+                            <p>for our newlettre and promotion</p>
+                        </div>
+                        <div class="subscribeButton">
+                            <input type="email" placeholder="Enter Your Email"
+                                pattern="([A-z0-9_.-]1,)@([A-z0-9_.-]1,).([A-z]2,8)" required>
+                            <button>Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid">
+        <div class="footer container">
+            <div class="brand col-xl-4 col-lg-12">
+                <a class="logo" href="#">
+                    Bran<span>d</span>
+                </a>
+                <p>Objectively transition extensive data rather than cross functional solutions.
+                    Monotonectally syndicate multidisciplinary materials before go forward benefits.
+                    Intrinsicly syndicate an expanded array of processes and cross-unit partnerships.<br><br>
+                    Efficiently plagiarize 24/365 action items and focused infomediaries.
+                    Distinctively seize superior initiatives for wireless technologies.
+                    Dynamically optimize. Objectively strategize seamless relationships via resource sucking testing
+                    procedures.
+                    Proactively cultivate next-generation results for value-added methodologies.
+                    Dynamically plagiarize unique methodologies after performance based methodologies.
+                    Monotonectally empower stand-alone mindshare rather than ubiquitous opportunities.
+                    Dynamically orchestrate resource sucking scenarios after alternative synergy.
+                    Compellingly envisioneer corporate methods of empowerment before standards compliant technologies.
+                    Objectively facilitate progressive.
+                </p>
+            </div>
+            <nav class="company">
+                <h2>company</h2>
+                <a class="footerLink" href="#">Home</a>
+                <a class="footerLink" href="#">Shop</a>
+                <a class="footerLink" href="#">About</a>
+                <a class="footerLink" href="#">How It Works</a>
+                <a class="footerLink" href="#">Contact</a>
+            </nav>
+            <nav class="information">
+                <h2>information</h2>
+                <a class="footerLink" href="#">Tearms & Condition</a>
+                <a class="footerLink" href="#">Privacy Policy</a>
+                <a class="footerLink" href="#">How to Buy</a>
+                <a class="footerLink" href="#">How to Sell</a>
+                <a class="footerLink" href="#">Promotion</a>
+            </nav>
+
+            <nav class="shopCategory">
+                <h2>shopCategory</h2>
+                <a class="footerLink" href="#">Men</a>
+                <a class="footerLink" href="#">Women</a>
+                <a class="footerLink" href="#">Child</a>
+                <a class="footerLink" href="#">Apparel</a>
+                <a class="footerLink" href="#">Brows All</a>
+            </nav>
+        </div>
+    </footer>
+    <div class="socialBack container-fluid">
+        <div class="social container">
+            <p>© 2017 Brand All Rights Reserved.</p>
+            <div class="socialBlockIcon">
+                <a class="socialIcon" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="socialIcon" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="socialIcon" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a class="socialIcon" href="#"><i class="fab fa-pinterest-p"></i></a>
+                <a class="socialIcon" href="#"><i class="fab fa-google-plus-g"></i></a>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+        <script src="../src/components/js/minicart.js"></script>
+    
+</body>
+
+</html>

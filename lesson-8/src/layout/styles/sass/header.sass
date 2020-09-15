@@ -1,0 +1,190 @@
+@import "variables"
+
+.headerFix 
+    position: fixed
+    z-index: 9999
+    background-color: #ffffff
+    width: 100%
+
+
+.header 
+    min-height: 100px
+    height: auto
+    display: flex
+    flex-direction: row
+    align-items: center
+    a
+        text-decoration: none
+    a:hover
+        color: #222222    
+
+.log
+    align-items: center
+    display: flex
+.logo 
+    width: 165px
+    line-height: 51px
+    text-transform: uppercase
+    background: url("../../assets/img/logo.png") no-repeat
+    text-decoration: none
+    font-size: 27px
+    padding-left: 72px
+    color: #222222
+    margin-right: 30px
+    
+
+.logo span 
+    font-weight: 700
+    color: #f16d7f
+
+
+.search 
+    display: flex
+    align-items: center
+    border: 1px solid #e6e6e6
+    border-radius: 3px
+    height: 38px
+    overflow: hidden
+    font-size: 14px
+    width: 332px
+
+.searchBrowse 
+    padding: 14px
+    background-color: #f8f8f8
+    font-weight: 400
+    line-height: 38px
+    width: fit-content
+
+
+.search 
+    
+    input 
+        height: inherit
+        border: none
+        outline: none
+        padding: 14px 16px
+        border-left: 1px solid #e6e6e6
+        border-right: 1px solid #e6e6e6
+
+
+    button 
+        height: inherit
+        border: none
+        background: none
+        padding: 12px
+    
+    
+
+.search .searchBrowse i 
+    color: #838383
+
+
+.search button i 
+    color: #a4a4a4
+
+
+.headerCart 
+    margin-right: 8px
+.accountCart
+    margin-left: auto
+    
+    .mainMiniCart
+        overflow-y: scroll
+        height: 500px
+        position: absolute
+        width: 260px
+        right: 58px
+        top: 100px
+        background-color: #ffffff
+        padding: 1rem 1rem
+        border: 1px solid rgba(0, 0, 0, 0.15)
+        border-radius: 5px
+        .wrapMiniCart
+            display: flex
+            justify-content: space-between
+            align-items: center
+            
+            button
+                background: none
+                outline: none
+                border: none
+                color: #c0c0c0
+                font-size: 16px
+                font-weight: 400
+                text-transform: uppercase
+        .nameMiniCart
+            font-size: 12px
+            margin-top: 10px
+            line-height: 20px
+        img
+            height: 80px
+            float: left
+            margin: 8px
+            
+        span
+            color: #e4af48
+            font-size: 12px
+        .priceMiniCart
+            font-size: 12px
+            margin-top: 5px
+            color: #f16d7f
+            font-size: 12px
+        .miniCartTotalPrice
+            display: flex
+            justify-content: space-between
+            flex-direction: column
+            color: #222222
+            font-size: 16px
+            font-weight: 700
+            text-transform: uppercase
+            .total
+                display: flex
+                justify-content: space-between
+                color: #222222
+                font-size: 16px
+                font-weight: 700
+                text-transform: uppercase
+            button
+                border: none
+                background-color: #f16d7f
+                padding: 13px 19px
+                font-size: 15px
+                font-weight: 400
+                color: #ffffff
+                margin-top: 10px
+                text-transform: uppercase
+
+.accountBtn 
+    border: none
+    background-color: #f16d7f
+    padding: 13px 19px
+    font-size: 15px
+    font-weight: 400
+    color: #ffffff
+.accountBtn:hover
+    background-color: darken($mainTextColor, 20%)
+
+.headerLine 
+    border-bottom: 1px solid #ececec
+
+.topNavWrap
+    box-shadow: 0px 10px 15px #e8e8e8
+.topNav 
+    height: 51px
+    font-weight: 700
+    font-size: 14px
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+  
+.topNav a 
+    text-decoration: none
+    color: #222222
+    text-transform: uppercase
+
+.topNav a:not(:last-child) 
+    margin-right: 45px
+
+.topNav a:hover 
+    color: $mainTextColor
