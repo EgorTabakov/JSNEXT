@@ -1,4 +1,4 @@
-const API_BASE = 'catalogData';
+const API_BASE = '/catalogData';
 
 
 

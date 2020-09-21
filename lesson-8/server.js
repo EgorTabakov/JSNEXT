@@ -4,6 +4,8 @@ const fs = require('fs');
 
 
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('.'));
 app.use(express.static('public'));
 app.use(express.static('src'));
@@ -14,8 +16,8 @@ app.get('/catalogData', (req, res) => {
   });
 });
 
-app.post('/catalogData', (req, res) => {
-  fs.readFile('cart.json', 'utf8', (err, data) => {
+app.post('catalogData', (req, res) => {
+  fs.readFile('catalogData/cart.json', 'utf8', (err, data) => {
     if (err) {
       res.send('{"result": 0}');
     } else {
@@ -24,7 +26,7 @@ app.post('/catalogData', (req, res) => {
       
       cart.push(item);
 
-      fs.writeFile('/cart.json', JSON.stringify(cart), (err) => {
+      fs.writeFile('catalogData/cart.json', JSON.stringify(cart), (err) => {
         if (err) {
           res.send('{"result": 0}');
         } else {
