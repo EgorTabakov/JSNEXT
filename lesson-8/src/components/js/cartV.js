@@ -1,16 +1,19 @@
 Vue.component('cart-items', {
-    props: ['query'],
+    props: [''],
     template: /*html*/
-    `<div class="catalogItems">
-    <div class="itemsProduct" 
-      v-for="(product, i) in filteredProducts" :style="{ background: 'url(' + product.img + ') no-repeat, url(../src/assets/img/Background.png) no-repeat'}">
-                                                              
-      <h3>{{ product.productName }}</h3>
-      <p>{{ product.productPrice }}</p>
-      
-      <button v-bind:id="product.productId" class="itemsCart">Add to Cart</button>
+    `<div class="mainMiniCart invisible">
+    <div class="shopCartMini invisible jsCart">
 
-    </div></div>
+    </div>
+    <div class="miniCartTotalPrice ">
+        <div class="total">
+            <div>total</div>
+            <div class="totalAmount"></div>
+        </div>
+        <button class="checkout" aria-label="checkout">checkout</button>
+        <button class="goToCart" aria-label="goToCart">go to cart</button>
+    </div>
+</div>
     `,
     data() {
       return {
